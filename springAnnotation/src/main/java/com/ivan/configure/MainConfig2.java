@@ -1,12 +1,15 @@
 package com.ivan.configure;
 
+import com.ivan.beans.Color;
 import com.ivan.beans.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import com.ivan.conditions.LinuxCondition;
+import com.ivan.conditions.MyImportBeanDefinitionRegistrar;
+import com.ivan.conditions.MyImportSelector;
+import com.ivan.conditions.WindowsCondition;
+import org.springframework.context.annotation.*;
 
 @Configuration
+@Import({Color.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 
 
@@ -36,22 +39,41 @@ public class MainConfig2 {
 
 
     /**
-     * @Conditional，按照一定的条件进行判断，满足条件给容器中注册bean
+     * @Conditional（{Condition}），按照一定的条件进行判断，满足条件给容器中注册bean
+     *
+     * 需求：如果系统为Windows，给容器中注册Bill
+     *      如果系统为Linux，给容器中注册Linus
      *
      */
 
-    @Bean("kobe")
+
+    @Conditional({WindowsCondition.class})
+    @Bean("bill")
     public Person person01(){
 
 
-        return new Person("Kobe Byrant",39);
+        return new Person("Bill Gates",39);
     }
 
+    @Conditional({LinuxCondition.class})
     @Bean("linus")
     public Person person02(){
 
         return new Person("Linus",48);
     }
+
+    /**
+     * 给容器中注册组件的方式：
+     *      1.包扫描+组件组件标注注解（）
+     *      2.@Bean[导入的第三方包里面的组件]
+     *      3.@Import[快速给容器导入第三方包]
+     *          (1)@Import(要导入到容器中的组件)：容器中就会自动注册这个组件，id默认是全类名 注：这时不能重载构造器
+     *          (2)ImportSelector:需要自定义一个ImportSelector的实现类，用来返回需要导入的组件的全类名 --SpringBoot中常用
+     *          (3)ImportBeanDefinitionRegistrar:手动注册bean到容器中
+     *
+     *
+     *
+     */
 
 
 }

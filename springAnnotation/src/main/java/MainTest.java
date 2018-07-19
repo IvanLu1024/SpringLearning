@@ -15,10 +15,15 @@ public class MainTest {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         Person bean = applicationContext.getBean(Person.class);
         System.out.println(bean);
+
         String[] names = applicationContext.getBeanDefinitionNames();
         for (String n:names){
             System.out.println(n);
         }
+
+        System.out.println();
+
+
 
 
     }

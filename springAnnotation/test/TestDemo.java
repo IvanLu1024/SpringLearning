@@ -35,6 +35,13 @@ public class TestDemo {
     public void testImport(){
         printBeans(applicationContext);
 
+        //工厂Bean获取的是调用getObject创建的对象
+        Object bean = applicationContext.getBean("colorFactoryBean");
+        System.out.println("类型为："+bean);
+
+        Object bean1 = applicationContext.getBean("&colorFactoryBean");
+        System.out.println("类型为："+bean1);
+
 
     }
 

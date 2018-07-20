@@ -1,6 +1,7 @@
 package com.ivan.configure;
 
 import com.ivan.beans.Color;
+import com.ivan.beans.ColorFactoryBean;
 import com.ivan.beans.Person;
 import com.ivan.conditions.LinuxCondition;
 import com.ivan.conditions.MyImportBeanDefinitionRegistrar;
@@ -70,10 +71,19 @@ public class MainConfig2 {
      *          (1)@Import(要导入到容器中的组件)：容器中就会自动注册这个组件，id默认是全类名 注：这时不能重载构造器
      *          (2)ImportSelector:需要自定义一个ImportSelector的实现类，用来返回需要导入的组件的全类名 --SpringBoot中常用
      *          (3)ImportBeanDefinitionRegistrar:手动注册bean到容器中
+     *      4.使用Spring提供的FactoryBean(工厂Bean)
+     *          (1)默认是获取到工厂bean调用GetObject创建的对象
+     *          (2)需要获取工厂Bean本身，我们需要在id前面添加$符号
      *
      *
      *
      */
+    @Bean
+    public ColorFactoryBean colorFactoryBean(){
+        return new ColorFactoryBean();
+
+
+    }
 
 
 }

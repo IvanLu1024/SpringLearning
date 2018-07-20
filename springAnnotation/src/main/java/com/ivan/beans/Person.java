@@ -1,16 +1,41 @@
 package com.ivan.beans;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
 
+    //使用@Value赋值：
+    //1.基本数值
+    //2.可以写SpEL：#{}
+    //3.可以写${}:取出配置文件[properties]中的值（在运行环境变量的值）;加载完外部的配置文件以后使用${}取出配置文件中的值
+    @Value("Ivan")
     private String name;
 
+    @Value("#{22-3}")
     private Integer age;
+
+    @Value("${person.nickName}")
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+
+    public Person(){
+
+    }
 
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", nickName='" + nickName + '\'' +
                 '}';
     }
 

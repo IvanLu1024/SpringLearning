@@ -5,6 +5,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ *
+ *
+ *
+ */
 public class IOCTest_AOP {
 
     @Test
@@ -12,7 +17,7 @@ public class IOCTest_AOP {
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfigOfAOP.class);
         MathCalculator calculator = applicationContext.getBean(MathCalculator.class);
-        System.out.println(calculator.div(9,0));;
+        System.out.println(calculator.div(9,1));;
 
     }
 

@@ -16,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/test/IOCTest_xml.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="317">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -493,7 +493,7 @@
       <workItem from="1532520652918" duration="377000" />
       <workItem from="1532521161278" duration="1186000" />
       <workItem from="1532568729132" duration="7240000" />
-      <workItem from="1532654510939" duration="25584000" />
+      <workItem from="1532654510939" duration="25863000" />
     </task>
     <servers />
   </component>
@@ -530,7 +530,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34387000" />
+    <option name="totallyTimeSpent" value="34666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1089,7 +1089,7 @@
     <entry file="file://$PROJECT_DIR$/test/IOCTest_xml.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -14,6 +14,8 @@ About Spring self-learning
  
  ![BeanFactory的继承关系](图片地址)
  
- -
+
+ --
  + [Spring容器的创建过程-注解方式](/document/Spring容器的创建过程-注解方式.xmind)
  + [Spring容器的创建过程-xml配置文件方式](/document/Spring容器的创建过程（XML配置方式）.xmind)
+

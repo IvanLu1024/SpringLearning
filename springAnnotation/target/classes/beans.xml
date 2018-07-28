@@ -9,6 +9,15 @@
 
 
 
+
+    </bean>
+
+    <bean id="son" class="com.ivan.beans.Person">
+        <property name="age" value="18"></property>
+        <property name="name" value="Ivan"></property>
+
+
+
     </bean>
 
 
